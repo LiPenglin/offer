@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /*
  * 思路：
- * 查找，两个搜索方向，找到一个既可以递增又可以递减的起始点
+ * 查找，两个搜索方向，找到既可以递增又可以递减的起始点
  */
 public class _03_array {  
     public static void main(String []args) {  

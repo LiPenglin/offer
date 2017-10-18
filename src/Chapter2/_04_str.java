@@ -8,7 +8,7 @@ package Chapter2;
 
 /*
  * 思路：
- * 1. 替换之后字符数组大小
+ * 1. 创建一个替换字符之后数组大小的char arr
  * 2. char arr A > char arr B
  */
 

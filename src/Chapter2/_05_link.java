@@ -8,8 +8,8 @@ import java.util.Stack;
  */
 
 /*
- * 1. 递归
- * 2. 堆
+ * 1. 递归实现
+ * 2. 堆实现
  */
 
 public class _05_link {

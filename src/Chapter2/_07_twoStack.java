@@ -22,6 +22,7 @@ public class _07_twoStack {
 		f.offer(10);
 		f.offer(14);
 		System.out.println(f.poll());
+		System.out.println(f.poll());
 		f.offer(16);
 		System.out.println(f.poll());
 		System.out.println(f.poll());
@@ -37,18 +38,24 @@ class _07_function {
 	}
 	
 	Integer poll() {
-		if (poll_stack.isEmpty()) {
-			if(offer_stack.isEmpty()) {
-				return null;
-			} else {
-				while (!offer_stack.isEmpty()) {
-					poll_stack.push(offer_stack.pop());
-				}
-				return poll_stack.pop();
-			}
-		} else {
-			return poll_stack.pop();
+//		if (poll_stack.isEmpty()) {
+//			if(offer_stack.isEmpty()) {
+//				return null;
+//			} else {
+//				while (!offer_stack.isEmpty()) {
+//					poll_stack.push(offer_stack.pop());
+//				}
+//				return poll_stack.pop();
+//			}
+//		} else {
+//			return poll_stack.pop();
+//		}
+		if (poll_stack.isEmpty() && offer_stack.isEmpty()) {
+			return null;
 		}
+		if (poll_stack.isEmpty())
+			while (!offer_stack.isEmpty()) poll_stack.push(offer_stack.pop());
+		return poll_stack.pop();
 	}
 	
 }

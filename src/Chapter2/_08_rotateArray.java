@@ -10,8 +10,8 @@ package Chapter2;
 public class _08_rotateArray {
 	public static void main(String[] args) {
 		_08_function f = new _08_function();
-		int[] arr = {3,4,5,1,2};
-//		int[] arr = {1,0,1,1,1}; 
+//		int[] arr = {3,4,5,1,2};
+		int[] arr = {1,0,1,1,1}; 
 		System.out.println(f.min(arr));
 	}
 }
@@ -41,8 +41,10 @@ class _08_function {
 		return arr[right];
 	}
 	int get_min(int []arr) {
-		int value = 0;
-		for (int i = 0; i < arr.length; i++) if (arr[i] < value) value = arr[i];
-		return value;
-	}
+        int min = 0x7fffffff;
+        for (int a : arr) {
+        	min = a < min ? a : min;
+        }
+        return min;
+    }
 }

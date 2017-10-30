@@ -5,8 +5,10 @@ package Chapter3;
  */
 public class _12_printn {
 	public static void main(String[] args) {
-		_12_function f = new _12_function();
-		f.print_to_max_n(2);
+//		_12_function f = new _12_function();
+//		f.print_to_max_n(2);
+		_12_functionII f = new _12_functionII();
+		f.print_max_to_n(2);
 	}
 }
 
@@ -48,5 +50,30 @@ class _12_function {
 			
 		}
 		return is_over_flow;
+	}
+}
+
+class _12_functionII {
+	void print_max_to_n(int n) {
+		char []number = new char[n];
+		print_max(number, 0);
+	}
+	void print_number(char []number) {
+		boolean is_begin = true;
+		for (char c : number) {
+			if (c != '0' && is_begin) is_begin = false; 
+			if (!is_begin) System.err.print(c);
+		}
+		if (!is_begin) System.err.println();
+	}
+	void print_max(char []number, int index) {
+		if (index == number.length) {
+			print_number(number);
+			return;
+		}
+		for (int i = 0; i < 10; i++) {
+			number[index] = (char) (i + '0');
+			print_max(number, index + 1);
+		}
 	}
 }

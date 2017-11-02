@@ -22,8 +22,8 @@ public class _17_merge_link {
 
 class _17_function {
 	_17_Node merge(_17_Node node_1, _17_Node node_2) {
-		if (node_1 == null) return node_1;
-		else if (node_2 == null) return node_2;
+		if (node_1 == null) return node_2;
+		else if (node_2 == null) return node_1;
 		
 		_17_Node merge_node = null;
 		

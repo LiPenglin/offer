@@ -8,16 +8,35 @@ package Chapter5;
  */
 public class _29_the_over_half_num {
 	public static void main(String[] args) {
-//		int []arr = {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
-		int []arr = {1, 1, 0, 0, 3, 3, 3, 3, 3};
+		int []arr = {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
+//		int []arr = {1, 1, 0, 0, 3, 3, 3, 3, 3};
 		_29_function f = new _29_function();
 //		f.quick_sort(arr, 0, arr.length - 1);
 //		IntStream.of(arr).forEach(System.out::println);
-		System.out.println(f.over_half_num(arr));
+		
+//		System.out.println(f.over_half_num(arr));
+		
+		System.out.println(f.over_half_num_II(arr));
 	}
 }
 
 class _29_function {
+	/*
+	 * 方法2：最后剩下的是超过一半的次数的值
+	 */
+	int over_half_num_II(int []arr) {
+		int length = arr.length;
+		int count = 0;
+		int number = -1;
+		for (int i = 0; i < length; i++) {
+			if (count == 0) {
+				number = arr[i];
+				count++;
+			} else if (arr[i] != number) count--;
+			else count++;
+		}
+		return check_more_than_half(arr, number) ? -1 : number;
+	}
 	/*
 	 * 设：x 是出现次数超过n/2 的项
 	 * 经过partition 之后，下标是 n/2 的数不可能是非x

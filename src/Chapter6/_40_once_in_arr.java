@@ -25,6 +25,7 @@ class _40_function {
 			num = num >> 1;
 		}
 		int x = 0, y = 0;
+		
 		// ·Ö×é
 		for (int a : arr) {
 			if ((a >> len & 1) == 0) x^=a;

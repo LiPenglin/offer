@@ -18,7 +18,7 @@ public class _39_avl {
 
 class _39_functionI {
 	int max = 0x7fffffff;
-	// ×óÓÒ×ÓÊ÷ Éî¶È²î <= 1
+	// å·¦å³å­æ ‘ æ·±åº¦å·® <= 1
 	boolean is_avl(TreeNodeI root) {
 		return is_balanced(root) == max ? false : true;
 	}
